@@ -1,0 +1,26 @@
+ALTER TABLE `finaldbmsproject`.`product` 
+ADD INDEX `catagoryIndexTable` (`catagory` ASC) VISIBLE;
+;
+ALTER TABLE `finaldbmsproject`.`shipping` 
+ADD INDEX `timeIndexTable` (`date_time` ASC) VISIBLE;
+;
+ALTER TABLE `finaldbmsproject`.`order_has_product` 
+ADD INDEX `productIndTable` (`Product_pid` ASC) VISIBLE;
+;
+ALTER TABLE `finaldbmsproject`.`order` 
+ADD INDEX `OrderIdIndexTable` (`oid` ASC) VISIBLE;
+;
+ALTER TABLE `finaldbmsproject`.`product` 
+ADD INDEX `stockIndexTable` (`stocks` ASC) VISIBLE;
+;
+
+
+-- Queries optimised
+
+
+
+select catagory ,count(catagory) from product t1 where t1.pid = (select distinct(pid) from order_has_product where pid = t1.pid) group by catagory order by catagory desc; 
+
+
+select sum(amount) as 'sales' from finaldbmsproject.order as t1 where oid = (select Order_Details_oid from finaldbmsproject.shipping where year(date_time) >= (?) and year(date_time)<=(?) and t1.oid = Order_Details_oid);
+

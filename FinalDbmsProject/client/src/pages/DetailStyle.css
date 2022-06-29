@@ -1,0 +1,36 @@
+/* body {
+    background: #e8cbc0;
+    background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
+    background: linear-gradient(to right, #e8cbc0, #636fa4);
+    min-height: 100vh;
+} */
+
+.detailContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .detailCard{
+    align-items: center;
+    margin:10px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10%;
+  }
+  
+  .detailCard:hover{
+    background-color: #009F7F;
+  }
+  
+  .empPic{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width:100px;
+    height: 100px;
+    background-color: azure;
+    border-radius: 50%;
+  }

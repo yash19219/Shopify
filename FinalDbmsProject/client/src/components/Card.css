@@ -1,0 +1,118 @@
+:root {
+    --gradient: linear-gradient(to left top, #DD2476 10%, #FF512F 90%) !important;
+  }
+  
+  /* body {
+    background: #111 !important;
+  } */
+
+  .allign{
+    padding-left: 60%;
+  }
+  
+  .card {
+    
+    background: #222;
+    width: 350px;
+  height: 500px;
+    border: 1px solid #dd2476;
+    color: rgba(250, 250, 250, 0.8);
+    margin-bottom: 2rem;
+    width: 23rem;
+    overflow: hidden;
+  }
+
+  .main-card--cointainer {
+    
+    display: grid ;
+  
+    /* padding-left: 2030px; */
+    grid-template-columns: repeat(3, minmax(250px, 400px));
+    grid-gap: 5px;
+    overflow: hidden;
+    /* justify-content: space-around; */
+    
+  }
+  
+  
+  .btn {
+    border: 5px solid;
+    /* padding: 3%; */
+    border-image-slice: 1;
+    background: var(--gradient) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    border-image-source:  var(--gradient) !important; 
+    text-decoration: none;
+    transition: all .4s ease;
+  }
+  
+  .btn:hover, .btn:focus {
+        background: var(--gradient) !important;
+    -webkit-background-clip: none !important;
+    -webkit-text-fill-color: #fff !important;
+    border: 5px solid #fff !important; 
+    box-shadow: #222 1px 0 10px;
+    text-decoration: underline;
+  }
+  .zoom {
+    /* padding: 50px; */
+    /* background-color: green; */
+    transition: transform .2s; /* Animation */
+    /* width: 200px;
+    height: 200px;
+    margin: 0 auto; */
+  }
+  
+  .zoom:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+  .focus-content {
+    display: block;
+    padding: 8px 12px;
+  }
+  .card:hover img, .card:focus-within img {
+    margin-top: -120px;
+  }
+  
+  .card:hover h3, .card:focus-within h3 {
+    padding: 8px 12px 0;
+  }
+ 
+
+  @media (max-width: 1470px) {
+    .main-card--cointainer {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(100px, 400px));
+      grid-gap: 5px;
+      justify-content: space-around;
+    }
+    .allign{
+      padding-left: 12%;
+    }
+  }
+  @media (max-width: 1365px) {
+    .main-card--cointainer {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(100px, 400px));
+      grid-gap: 5px;
+      justify-content: space-around;
+    }
+    .allign{
+      padding-left: 10%;
+    }
+  }
+
+  @media (max-width: 990px) {
+    .main-card--cointainer {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(100px, 400px));
+      grid-gap: 5px;
+      justify-content: space-around;
+    }
+    .allign{
+      padding-left: 5%;
+    }
+  }
